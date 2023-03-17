@@ -1,0 +1,13 @@
+package com.day4;
+
+public class Asdf {
+
+	public static void main(String[] args) {
+		double d = 17.23456;
+		double d2 = d*100;
+		double d3 =(int)d2/100;
+		System.out.println(d2);
+		System.out.println(d3);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.day4;
+
+public class ExampleOp {
+
+	public static void main(String[] args) {
+		int num1 = 20;
+		int c = (num1 > 0) ? a : b;
+		System.out.println(c);
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.day5;
+import java.util.Scanner;
+public class AAA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = sc.nextInt(); 
+		System.out.println(((a % 2) == 1) ? "홀수" : "짝수");
+
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.day5.Example;
+
+import java.util.Scanner;
+
+	public class ExampleSwtich {
+	
+		public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("취미를 입력하세요 : 1. 영화 2. 축구 3. 야구 4. 등산");
+		
+		int hobby = sc.nextInt();
+		String sports = "";
+		
+		Switch(hobby) {
+		case 1
+	
+		}
+	}
+
+}

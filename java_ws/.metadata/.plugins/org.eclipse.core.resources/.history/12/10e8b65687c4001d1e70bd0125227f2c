@@ -1,0 +1,17 @@
+package com.day5;
+import java.util.Scanner;
+public class AAA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		String gender = "";
+		if (a == 1) {
+		gender = "남자";
+		}else if (a == 2) {
+		gender = "여자";
+		System.out.println(gender);
+	}
+
+}

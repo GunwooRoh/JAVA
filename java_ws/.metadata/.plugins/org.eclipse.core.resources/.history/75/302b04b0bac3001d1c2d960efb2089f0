@@ -1,0 +1,11 @@
+package com.day4;
+
+public class Asdf {
+
+	public static void main(String[] args) {
+		char ch = 'd';
+		(char ch1 = 100;       )  //ch의 유니코드 값을  임의의 변수에  할당
+		(char ch2 = (ch1+3);  )  //ch에 3을 더한 값을 char 변수에 할당
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.day4;
+
+public class Asdf {
+
+	public static void main(String[] args) {
+		short s = 1;
+		byte b1 = 2, b2 = 3;
+		int s2 = (s + b1 + b2);
+		System.out.println(s2);
+	}
+
+}

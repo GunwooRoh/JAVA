@@ -1,0 +1,12 @@
+package com.day4;
+
+public class Asdf {
+
+	public static void main(String[] args) {
+		char ch = 'B';
+		int a = (int)(ch +32);
+		char ch2 = (char) a;
+		System.out.println(ch2);
+	}
+
+}

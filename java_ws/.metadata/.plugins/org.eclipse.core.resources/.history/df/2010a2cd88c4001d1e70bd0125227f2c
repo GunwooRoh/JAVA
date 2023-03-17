@@ -1,0 +1,16 @@
+package com.day5;
+import java.util.Scanner;
+public class AAA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		String num = "";
+		if (a % 1) {
+		num = "홀수";
+		}else if (a == 2) {
+		num = "짝수";
+		System.out.println(num); 
+	}
+}
