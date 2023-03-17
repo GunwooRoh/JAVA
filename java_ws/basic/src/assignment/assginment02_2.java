@@ -7,9 +7,8 @@ public class assginment02_2 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("직업을 입력하세요 : A. 회사원 B. 학생 C. 주부 D. 기타");
-		int code = System.in.read();
-		char job = (char)code;
+		System.out.println("직업을 입력하세요 : A. 회사원 B. 학생 C. 주부 D. 기타");	 
+		char job = (char)System.in.read();
 		char upperCase = Character.toUpperCase(job);
 		String str = "";
 		
@@ -33,7 +32,7 @@ public class assginment02_2 {
 		default :
 			str = "잘못입력했어요";	
 		}
-		System.out.println(str.toUpperCase());
+		System.out.println(str);
 	
 
 	}
