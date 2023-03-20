@@ -52,6 +52,7 @@ public class forTest {
 		int count = sc.nextInt();
 		for(int i = 0; i < 4; i++)
 			System.out.println(((i+1)*10) + ". Hello java");
+		System.out.println("-----------------------");
 			
 	}
 
