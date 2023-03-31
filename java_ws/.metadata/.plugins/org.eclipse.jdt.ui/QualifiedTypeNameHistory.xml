@@ -2,5 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.AbstractCollection"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="com.day14.MyParents"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
