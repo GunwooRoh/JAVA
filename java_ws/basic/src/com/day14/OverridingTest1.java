@@ -14,7 +14,7 @@ class Point3D extends Point {
 	private int z;
 	
 	public String findLocation() {
-		String result = "x = " + ", y = " + y + ", z =" + z;
+		String result = super.findLocation() + ", z =" + z;
 		return result;
 	}
 }
