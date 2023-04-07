@@ -71,8 +71,7 @@ public class AbstractTest4 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Shape0 s[] = new Shape0[3];
-			while (true) {
-			for (int i = 0; i < s.length; i++) {
+		for (int i = 0; i < s.length; i++) {
 			System.out.println("도형을 선택하세요 (1. 원, 2. 사각형)");
 			int input = sc.nextInt();
 
@@ -81,33 +80,38 @@ public class AbstractTest4 {
 				int radius = sc.nextInt();
 				s[i] = new Circle0(radius);
 				s[i].findArea();
-				for(int i2 = 0; i2 < s.length; i2++) {
-					if(s[i2] instanceof Circle0) {
-						Circle0 c = (Circle0)s[i2];
-						c.display();
-
-					}else if (input == 2) {
-						System.out.println("가로, 세로 입력");
-						int width = sc.nextInt();
-						sc.nextLine();
-						int height = sc.nextInt();
-						for (Shape0 i3 : s) {
-							if(i3 instanceof Rect0) {
-								Rect0 r = (Rect0)i3;
-								r.display();
-							}
-						}
-
-					}else {
-						System.out.println("잘못입력하셨습니다.");
-						continue;
-					}
+			}else if (input == 2) {
+				System.out.println("가로, 세로 입력");
+				int width = sc.nextInt();
+				sc.nextLine();
+				int height = sc.nextInt();
+			}else {
+				System.out.println("잘못입력하셨습니다.");
+				continue;
+			}
+			System.out.println("----------for----------");
+			if(s[i] instanceof Circle0) {
+				Circle0 c = (Circle0)s[i];
+				c.display();
+			}else if (s[i] instanceof Rect0) {
+				Rect0 r = (Rect0)s[i];
+				r.display();
+			}
+			System.out.println("---------확장 for----------");
+			for (Shape0 i3 : s) {
+				if (i3 instanceof Circle0) {
+					Circle0 c = (Circle0)i3;
+					c.display();
+				}else if (i3 instanceof Rect0) {
+					Rect0 r = (Rect0)i3;
+					r.display();
 				}
-				}
-			}	
+			}
 
-			sc.close();
-		}
+		}  
+
+
+
 	}
 }
 
