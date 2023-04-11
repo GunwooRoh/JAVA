@@ -38,8 +38,8 @@
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
-			<item value="C:\Users\ezen\Documents\카카오톡 받은 파일"/>
 			<item value="C:\Users\ezen\Desktop"/>
+			<item value="C:\Users\ezen\Documents\카카오톡 받은 파일"/>
 		</list>
 	</section>
 </section>
