@@ -14,6 +14,7 @@
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\ezen\Downloads\노건우7.zip"/>
 			<item value="C:\Users\ezen\Downloads\노건우5.zip"/>
 			<item value="C:\Users\ezen\Downloads\노건우4.zip"/>
 			<item value="C:\Users\ezen\Desktop\노건우3.zip"/>
@@ -38,14 +39,16 @@
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\ezen\Desktop"/>
+			<item value="C:\Users\ezen\Downloads"/>
 			<item value="C:\Users\ezen\Downloads\day21"/>
 			<item value="C:\Users\ezen\Downloads\com (1)\day12"/>
 			<item value="C:\Users\ezen\Downloads\com (1)\day11"/>
 			<item value="C:\Users\ezen\Downloads\com (1)\day10"/>
 			<item value="C:\Users\ezen\Downloads\day19"/>
-			<item value="C:\Users\ezen\Downloads"/>
 			<item value="C:\Users\ezen\Documents\카카오톡 받은 파일"/>
-			<item value="C:\Users\ezen\Desktop"/>
 		</list>
+	</section>
+	<section name="FileSystemExportWizard">
 	</section>
 </section>
