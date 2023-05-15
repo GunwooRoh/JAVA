@@ -1,0 +1,61 @@
+package com.jdbc.day3;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class JdbcTestEtc2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("ID, 비밀번호, 이름, 전화번호를 입력하세요.");
+		String id = sc.nextLine();
+		String pwd = sc.nextLine();
+		String name = sc.nextLine();
+		String hp = sc.nextLine();
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("드라이버 로딩 성공");
+			
+			String url = "jdbc:oracle:thin:@192.168.0.44:1521:xe";
+			String user = "hr", pw = "hr123";
+			con = DriverManager.getConnection(url, user, pw);
+			System.out.println("DB연결 성공");
+			
+		
+			String sql="update mem" + " set id = ?, pwd = ?, name = ?, hp = ?";
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, id);
+			ps.setString(2, pwd);
+			ps.setString(3, name);
+			ps.setString(4, hp);
+			
+			
+			int cnt = ps.executeUpdate();
+			System.out.println(cnt + "개 행이 입력됨");
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+		
+			try {
+				if(ps!=null) ps.close();
+				if(con!=null) con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+
+}
+

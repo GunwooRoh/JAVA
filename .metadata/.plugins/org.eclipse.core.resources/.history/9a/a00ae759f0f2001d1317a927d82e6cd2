@@ -1,0 +1,5 @@
+package com.pd.model.copy;
+
+public class PdDTO {
+
+}

@@ -1,0 +1,85 @@
+package com.jdbc.day3;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.db.DbUtil;
+
+public class PdConsole1 {
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		while(true) {
+			try {
+				mainMenu();
+				int type=Integer.parseInt(sc.nextLine());
+				
+				switch(type) {
+					case 1:
+						register();
+						break;
+					case 2:
+						selectAll();
+						break;
+					case 6:
+						System.out.println("프로그램 종료!");
+						System.exit(0);
+					default:
+						System.out.println("잘못 선택!");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}//while
+	}
+
+	private static void selectAll() {
+		
+	}
+
+	private static void register() throws SQLException {
+		System.out.println("상품명, 가격 입력!");
+		String pdName=sc.nextLine();
+		int price=Integer.parseInt(sc.nextLine());
+		
+		int cnt = insertPd(pdName, price);
+		
+	}
+
+	private static int insertPd(String pdName, int price) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+			//1,2
+			con=DbUtil.getConnection();
+		
+			//3
+			String sql="insert into pd(no,pdname,price)"
+		               + " values(pd3_seq.nextval,?,?)";
+			ps=con.prepareStatement(sql);
+			
+			ps.setString(1, pdName);
+			ps.setInt(2, price);
+			
+			//4
+			int cnt=ps.executeUpdate();
+			return cnt;
+		}finally {
+			DbUtil.dbClose(ps, con);
+		}
+	}
+
+	private static void mainMenu() {
+		System.out.println("------------------------------------------");
+		System.out.println("1.등록 2.전체조회 3.수정 4.삭제 5.검색 6.종료");
+		System.out.println("------------------------------------------");
+		System.out.println("번호를 입력하세요");
+	}
+
+}
