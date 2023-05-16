@@ -125,16 +125,42 @@ public class PdDAO {
 			con=DbUtil.getConnection();
 			
 			//3
-			String sql="";
-			ps=con.prepareStatement(sql);
+			String sql="update pd" + "set pdname = ?, pirce = ?" + "where no = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getPdName());
+			ps.setInt(2, dto.getPrice());
+			ps.setInt(3, dto.getNo());
 			
 			//4
-			
+			int cnt = ps.executeUpdate();
+			System.out.println("상품 수정 결과, cnt : " + cnt + ", 매개변수 dto : " + dto);
+			return cnt;
 		}finally {
-			
+			DbUtil.dbClose(ps, con);
 		}
 	}
-	
+	public int delete(int no) throws SQLException {
+	      Connection con = null;
+	      PreparedStatement ps = null;
+	      
+	      try {
+	         //1,2 드라이버로딩&db연결
+	         con=DbUtil.getConnection();
+	      
+	         //3.sql문 처리를 위한 PrepareStatement 객체 생성
+	         String sql = "delete from pd where no =?";
+	         ps=con.prepareStatement(sql);
+	         ps.setInt(1, no);
+	         
+	         //4.sql 처리
+	         int cnt = ps.executeUpdate();
+	         System.out.println("삭제 결과 , cnt="+cnt+", 매개변수 no="+no);
+	         
+	         return cnt;	         
+	      }finally {
+	         DbUtil.dbClose(ps, con);	         
+	      }
+	   }
 }
 
 

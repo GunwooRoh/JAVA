@@ -1,0 +1,33 @@
+package com.awt.day1;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+
+public class AwtExample {
+
+	public static void main(String[] args) {
+		Frame f = new Frame("Label,TestField, Checkbox, TextArea");
+		f.setSize(380, 500);
+		f.setLayout(new FlowLayout());
+		
+		Label lbId = new Label("ID : ");
+		Label lbPwd = new Label("Password : ");
+
+		
+		TextField tfId = new TextField(10);
+		TextField tfPwd = new TextField(10);
+		tfPwd.setEchoChar('*');
+		
+		f.add(lbId);
+		f.add(tfId);
+		f.add(lbPwd);
+		f.add(tfPwd);
+		
+		
+
+	}
+
+}

@@ -1,0 +1,53 @@
+package com.awt.day1;
+
+import java.awt.Choice;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.Scrollbar;
+import java.awt.TextField;
+
+public class AwtExample {
+
+	public static void main(String[] args) {
+		Frame f = new Frame("Label,TestField, Checkbox, TextArea");
+		f.setSize(380, 500);
+		f.setLayout(new FlowLayout());
+		
+		Label lbId = new Label("Name : ");
+		Label lbPwd = new Label("Password : ");
+
+		
+		TextField tfId = new TextField(10);
+		TextField tfPwd = new TextField(10);
+		tfPwd.setEchoChar('*');
+		
+		f.add(lbId);
+		f.add(tfId);
+		f.add(lbPwd);
+		f.add(tfPwd);
+		
+		Choice chJob = new Choice();
+		chJob.add("c");
+		chJob.add("c");
+		chJob.add("c++");
+		
+		f.add(chJob);
+		
+		Scrollbar hor = new Scrollbar(Scrollbar.HORIZONTAL, 0, 50, 0, 100);
+		hor.setSize(100, 15);
+		hor.setLocation(60, 30);
+		
+		Scrollbar ver = new Scrollbar(Scrollbar.VERTICAL, 50, 20, 0, 100);
+		ver.setSize(15, 100);
+		ver.setLocation(30, 30);
+		
+		f.add(hor);
+		f.add(ver);
+		
+		
+		f.setVisible(true);
+
+	}
+
+}

@@ -80,18 +80,72 @@ public class PdManager {
 				+ dto.getPrice()+"\t"+dto.getRegdate()+"\n");		
 	}
 
-	public void edit() {
+	public void edit() throws SQLException {
 		//1
 		System.out.println("수정할 번호,상품명,가격 입력!");
 		String no=sc.nextLine();
 		String pdName=sc.nextLine();
 		String price=sc.nextLine();
 		
+		if(no == null || no.isEmpty()) {
+			System.out.println("번호를 입력해주세요.");
+			return;
+		}
+		
+		if(pdName == null || no.isEmpty()) {
+			System.out.println("상품명을 입력해주세요.");
+			return;
+		}
+		
+		if(price == null || no.isEmpty()) {
+			System.out.println("가격을 입력해주세요.");
+			return;
+		}
+		
 		//2
+		PdDTO dto = new PdDTO();
+		dto.setNo(Integer.parseInt(no));
+		dto.setPdName(pdName);
+		dto.setPrice(Integer.parseInt(price));
+		int cnt = pdDao.updatePd(dto);
 		
 		//3
+		String result = "";
+		if(cnt > 0) {
+			result = "상품 수정 성공";
+		}else {
+			result = "상품 수정 실패";
+		}
 		
+		System.out.println(result);
 	}
+		public void remove() throws NumberFormatException, SQLException {
+			  //1.사용자로부터 입력 받기
+		      System.out.println("삭제할 번호를 입력하세요");
+		      String no = sc.nextLine();
+		      
+		      if(no==null||no.isEmpty()) {
+		         System.out.println("번호를 입력해주세요");
+		         return;
+		      }
+		      
+		      //2.DB작업 - 로직처리
+		      int cnt = pdDao.delete(Integer.parseInt(no));
+		      
+		      //3.결과처리(화면 출력)
+		      String result ="";	      
+		      if(cnt>0) {
+		         result ="삭제 성공";
+		      }else {
+		         result ="삭제 실패";
+		      }
+		      
+		      System.out.println(result);
+		
+	
+	}
+	
+	
 
 }
 
